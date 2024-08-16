@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,67 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background: linear-gradient(90deg, #0899d7, #0f022e);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  text-align: center;
+  color: white;
+  padding: 1em;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 1em;
+}
+.pokemons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  padding: 2em;
+  justify-content: center;
+}
+.pokemon {
+  width: 200px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 1em;
+  cursor: pointer;
+  transition: transform 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pokemon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.loading {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+
+/* .scores {
+  display: flex;
+  justify-content: space-between;
+} */
