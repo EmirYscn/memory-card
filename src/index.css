@@ -89,6 +89,7 @@ header {
 .info {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: white;
   padding: 1em;
 }
@@ -125,7 +126,111 @@ header {
   color: white;
 }
 
-/* .scores {
+.won {
   display: flex;
-  justify-content: space-between;
-} */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  color: white;
+}
+
+/* CSS */
+.btn {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+.btn:hover:after {
+  transform: translate(0, 0);
+}
+
+.btn:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.btn:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 0 40px;
+  }
+}
+
+/* Basic Select Styling */
+.select {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* Style on focus */
+.select:focus {
+  border-color: #007bff;
+}
+
+/* Style for the dropdown arrow */
+.select::-ms-expand {
+  display: none;
+}
+
+/* Optional: Add an arrow icon */
+.select {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1em center;
+  background-size: 1em;
+}
+
+/* Style for disabled state */
+.select:disabled {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
