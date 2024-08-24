@@ -49,12 +49,16 @@ export default function App() {
 
   // fetch pokemons
   useEffect(() => {
+    const abortController = new AbortController();
+
     async function fetchPokemon() {
       const pokis = [];
 
       setIsLoading(true);
       for (let i = 1; i < pokemonsCount + 1; i++) {
-        const res = await fetch(`${POKEMON_API}${i}/`);
+        const res = await fetch(`${POKEMON_API}${i}/`, {
+          signal: abortController.signal,
+        });
         const data = await res.json();
         const imgUrl = data.sprites.front_default;
         const name = data.name;
@@ -68,6 +72,8 @@ export default function App() {
     }
 
     fetchPokemon();
+
+    return () => abortController.abort();
   }, [pokemonsCount]);
 
   return (
